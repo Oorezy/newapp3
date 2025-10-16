@@ -1,0 +1,117 @@
+    <!DOCTYPE html>
+            <html xmlns:th="http://www.thymeleaf.org" 
+                  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+                  layout:decorate="~{layout}">
+            <head>
+                <title th:text="${appName} + ' - Home'">Home</title>
+            </head>
+            <body>
+                <div layout:fragment="content">
+                    ```html
+<body>
+    <!-- Hero Section -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4">Welcome to Simple Blog</h1>
+                    <p class="lead">A platform for sharing your thoughts and ideas with the world.</p>
+                    <p>Join our community of writers and readers today!</p>
+                    <a href="/register" class="btn btn-primary btn-lg">Get Started</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/images/blog-hero.svg" class="img-fluid" alt="Blog Hero Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brief Description -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>About Simple Blog</h2>
+                    <p class="lead">Simple Blog is a web-based platform that allows users to create, read, update, and delete blog posts. It includes features such as user authentication, post management, and comment functionality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Summary Area -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Key Features</h2>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">User Authentication</h5>
+                            <p class="card-text">Secure user registration and login with role-based access control.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Post Management</h5>
+                            <p class="card-text">Create, edit, and delete your blog posts with ease.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Comment Functionality</h5>
+                            <p class="card-text">Engage with readers by allowing comments on your blog posts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Blog Posts -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Latest Blog Posts</h2>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div th:each="post : ${latestPosts}" class="col-md-4">
+                    <div class="card mb-4">
+                        <img th:src="${post.imageUrl}" class="card-img-top" alt="Post Image">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${post.title}">Post Title</h5>
+                            <p class="card-text" th:text="${post.excerpt}">Post Excerpt</p>
+                            <a th:href="@{/posts/{id}(id=${post.id})}" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-primary text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Ready to Start Blogging?</h2>
+                    <p class="lead">Join Simple Blog today and share your stories with the world.</p>
+                    <a href="/register" class="btn btn-light btn-lg">Sign Up Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+```
+                </div>
+            </body>
+            </html>
