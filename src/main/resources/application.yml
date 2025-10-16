@@ -4,9 +4,9 @@
       application:
         name: newapp3
       datasource:
-                url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5433/DEVFlow}
+                url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/postgres}
                 username: ${JDBC_DATABASE_USERNAME:postgres}
-                password: ${JDBC_DATABASE_PASSWORD:xxxxx}
+                password: ${JDBC_DATABASE_PASSWORD:1234}
                 hikari:
                   connection-timeout: 30000
                   maximum-pool-size: 10

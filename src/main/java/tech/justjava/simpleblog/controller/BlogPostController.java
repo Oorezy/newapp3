@@ -11,7 +11,7 @@ import tech.justjava.simpleblog.service.BlogPostService;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/blogposts")
+@RequestMapping("/blog")
 public class BlogPostController {
 
     private final BlogPostService blogPostService;
@@ -21,20 +21,16 @@ public class BlogPostController {
         this.blogPostService = blogPostService;
     }
 
-    @GetMapping("/edit/{id}")
-    public String showEditForm(@PathVariable Long id, Model model) {
-        BlogPost blogPost = blogPostService.findById(id);
+    @GetMapping("/{id}/delete")
+    public String showDeleteForm(@PathVariable Long id, Model model) {
+        BlogPost blogPost = blogPostService.getBlogPostById(id);
         model.addAttribute("blogPost", blogPost);
-        return "blogposts/edit";
+        return "blog/delete";
     }
 
-    @PostMapping("/edit/{id}")
-    public String updateBlogPost(@PathVariable Long id, @Valid @ModelAttribute("blogPost") BlogPost blogPost,
-                                BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return "blogposts/edit";
-        }
-        blogPostService.updateBlogPost(id, blogPost);
-        return "redirect:/blogposts";
+    @PostMapping("/{id}/delete")
+    public String deleteBlogPost(@PathVariable Long id) {
+        blogPostService.deleteBlogPost(id);
+        return "redirect:/blog";
     }
 }
