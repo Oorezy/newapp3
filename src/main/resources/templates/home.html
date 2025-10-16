@@ -14,13 +14,15 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-4">Welcome to Simple Blog</h1>
-                    <p class="lead">A platform for sharing your thoughts and ideas with the world.</p>
-                    <p>Join our community of writers and readers today!</p>
-                    <a href="/register" class="btn btn-primary btn-lg">Get Started</a>
+                    <h1 class="display-4">Welcome to Simple Blog Application</h1>
+                    <p class="lead">Create, read, update, and delete blog posts with ease.</p>
+                    <div class="mt-4">
+                        <a href="/register" class="btn btn-primary btn-lg">Get Started</a>
+                        <a href="/login" class="btn btn-outline-primary btn-lg ms-2">Login</a>
+                    </div>
                 </div>
                 <div class="col-lg-6">
-                    <img src="/images/blog-hero.svg" class="img-fluid" alt="Blog Hero Image">
+                    <img src="/images/hero-image.jpg" class="img-fluid rounded" alt="Hero Image">
                 </div>
             </div>
         </div>
@@ -30,44 +32,39 @@
     <section class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>About Simple Blog</h2>
-                    <p class="lead">Simple Blog is a web-based platform that allows users to create, read, update, and delete blog posts. It includes features such as user authentication, post management, and comment functionality.</p>
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2>About Simple Blog Application</h2>
+                    <p class="lead">The Simple Blog Application is a web-based platform that allows users to create, read, update, and delete blog posts. It includes features such as user authentication, post management, and comment functionality.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Feature Summary Area -->
+    <!-- Feature Summary -->
     <section class="bg-light py-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Key Features</h2>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">User Authentication</h5>
-                            <p class="card-text">Secure user registration and login with role-based access control.</p>
+                            <h3 class="card-title">User Authentication</h3>
+                            <p class="card-text">Secure user registration and login with unique usernames and passwords.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Post Management</h5>
-                            <p class="card-text">Create, edit, and delete your blog posts with ease.</p>
+                            <h3 class="card-title">Post Management</h3>
+                            <p class="card-text">Create, edit, and delete your own blog posts with ease.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Comment Functionality</h5>
-                            <p class="card-text">Engage with readers by allowing comments on your blog posts.</p>
+                            <h3 class="card-title">Comment Functionality</h3>
+                            <p class="card-text">Engage with other users by commenting on their blog posts.</p>
                         </div>
                     </div>
                 </div>
@@ -75,37 +72,21 @@
         </div>
     </section>
 
-    <!-- Latest Blog Posts -->
+    <!-- User Story Section -->
     <section class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Latest Blog Posts</h2>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div th:each="post : ${latestPosts}" class="col-md-4">
-                    <div class="card mb-4">
-                        <img th:src="${post.imageUrl}" class="card-img-top" alt="Post Image">
-                        <div class="card-body">
-                            <h5 class="card-title" th:text="${post.title}">Post Title</h5>
-                            <p class="card-text" th:text="${post.excerpt}">Post Excerpt</p>
-                            <a th:href="@{/posts/{id}(id=${post.id})}" class="btn btn-primary">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="bg-primary text-white py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2>Ready to Start Blogging?</h2>
-                    <p class="lead">Join Simple Blog today and share your stories with the world.</p>
-                    <a href="/register" class="btn btn-light btn-lg">Sign Up Now</a>
+                <div class="col-lg-8 mx-auto">
+                    <h2>User Story: View Blog Posts</h2>
+                    <p class="lead">As a guest user, I want to view blog posts so that I can read the content.</p>
+                    <h3>Acceptance Criteria</h3>
+                    <ul>
+                        <li>The system shall display a list of blog posts on the homepage.</li>
+                        <li>Each blog post shall display the title, author, and publication date.</li>
+                        <li>The system shall allow users to click on a blog post to view its full content.</li>
+                    </ul>
+                    <h3>Mapped Functional Requirement</h3>
+                    <p>FR3: The system shall allow registered users to create, read, update, and delete their own blog posts.</p>
                 </div>
             </div>
         </div>
