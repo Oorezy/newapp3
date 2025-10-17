@@ -1,0 +1,22 @@
+package tech.justjava.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserManagementService {
+
+    // Implement user management business logic here
+    // For example: methods for viewing, editing, and deleting user accounts
+
+    public void viewUserAccounts() {
+        // Implementation for viewing user accounts
+    }
+
+    public void editUserAccount(Long userId) {
+        // Implementation for editing a user account
+    }
+
+    public void deleteUserAccount(Long userId) {
+        // Implementation for deleting a user account
+    }
+}

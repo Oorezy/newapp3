@@ -1,0 +1,8 @@
+package tech.justjava.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import tech.justjava.model.User;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+    // Custom query methods for user management can be added here
+}

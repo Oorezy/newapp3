@@ -1,0 +1,19 @@
+package tech.justjava.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/admin/users")
+public class UserManagementController {
+
+    @GetMapping
+    public String showUserManagementDashboard(Model model) {
+        // Add any necessary attributes to the model for the admin dashboard
+        return "admin/user-management";
+    }
+
+    // Additional methods for user management operations will be added here
+}
